@@ -40,6 +40,7 @@
     ]
   },
   "devDependencies": {
+    "@types/estree": "^1.0.5",
     "@types/react": "^18.2.42"
   }
 }
