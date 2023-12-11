@@ -18,6 +18,11 @@ const App: React.FC = () => {
         <button>カテゴリ</button>
         <button>ログイン</button>
       </header>
+      <footer>
+        <a href="">Privacy policy</a>
+        <a href="">著作権情報</a>
+        <a href="">サイトの所有者情報</a>
+      </footer>
     </>
   );
 };
