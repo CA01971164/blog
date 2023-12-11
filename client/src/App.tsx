@@ -27,6 +27,14 @@ const Head: React.FC = () => {
   );
 };
 
+const Foot: React.FC = () => {
+  return (
+    <footer>
+      <p>Copyright © 2023</p>
+    </footer>
+  );
+};
+
 const App: React.FC = () => {
   return (
     <>
@@ -68,9 +76,7 @@ const App: React.FC = () => {
           </ul>
         </nav>
       </main>
-      <footer>
-        <p>Copyright © 2023</p>
-      </footer>
+      <Foot />
     </>
   );
 };
