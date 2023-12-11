@@ -18,6 +18,33 @@ const App: React.FC = () => {
         <button>カテゴリ</button>
         <button>ログイン</button>
       </header>
+      <main>
+        <p>POST</p>
+        <div>
+          <h3>Hello</h3>
+          <p>Are you super man?</p>
+          <a href="">Read more </a>
+          <nav>
+            <ul>
+              <li>
+                <a href="page1.html">1</a>
+              </li>
+              <li>
+                <a href="page2.html">2</a>
+              </li>
+              <li>
+                <a href="page3.html">3</a>
+              </li>
+              <li>
+                <a href="page4.html">4</a>
+              </li>
+              <li>
+                <a href="page12.html">12</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </main>
       <footer>
         <a href="">Privacy policy</a>
         <a href="">著作権情報</a>
