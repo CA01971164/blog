@@ -3,27 +3,44 @@ const App: React.FC = () => {
   return (
     <>
       <header>
-        <button>home</button>
-        <form>
-          <label>検索:</label>
-          <input type="search"></input>
-          <input type="submit" value="検索" />
-        </form>
-        <form>
-          <select name="言語" id="">
-            <option value="日本語">日本語</option>
-            <option value="English">English</option>
-          </select>
-        </form>
-        <button>カテゴリ</button>
-        <button>ログイン</button>
+        <h1>Blog</h1>
+        <nav>
+          <ul>
+            <li>
+              <a href="">home</a>
+            </li>
+            <li>
+              <a href="">言語</a>
+            </li>
+            <li>
+              <a href="">カテゴリ</a>
+            </li>
+            <li>
+              <a href="">お問い合わせ</a>
+            </li>
+            <li>
+              <a href="">ログイン</a>
+            </li>
+          </ul>
+        </nav>
       </header>
       <main>
         <p>POST</p>
-        <div>
-          <h3>Hello</h3>
-          <p>Are you super man?</p>
-          <a href="">Read more </a>
+        <article className="blog-post">
+          <header>
+            <h2>タイトル１</h2>
+            <time dateTime="2023-12-11">2023-12-11</time>
+          </header>
+          <p>本文１</p>
+        </article>
+        <article className="blog-post">
+          <header>
+            <h2>タイトル2</h2>
+            <time dateTime="2023-12-11">2023-12-11</time>
+          </header>
+          <p>本文2</p>
+        </article>
+       
           <nav>
             <ul>
               <li>
@@ -43,12 +60,9 @@ const App: React.FC = () => {
               </li>
             </ul>
           </nav>
-        </div>
       </main>
       <footer>
-        <a href="">Privacy policy</a>
-        <a href="">著作権情報</a>
-        <a href="">サイトの所有者情報</a>
+        <p>Copyright © 2023</p>
       </footer>
     </>
   );
