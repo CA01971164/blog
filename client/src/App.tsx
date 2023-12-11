@@ -1,14 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import { Head } from "./Components/Head";
+import { Foot } from "./Components/Foot";
 
-const Foot: React.FC = () => {
-  return (
-    <footer>
-      <p>Copyright © 2023</p>
-    </footer>
-  );
-};
 
 const App: React.FC = () => {
   return (
