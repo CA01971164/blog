@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import axios from "axios";
+import { Article } from "./Components/Article";
 
 import { useState } from "react";
 import { Head } from "./Components/Head";
@@ -13,21 +14,6 @@ type Post = {
   time: Date;
 };
 
-//投稿した記事を表示させる仕組み
-const Article: React.FC<{ posts: Record<number, Post> }> = ({ posts }) => {
-  return (
-    <>
-      {Object.values(posts).map((post) => (
-        <article key={post.id} className="blog-post">
-          <header>
-            <h2>{post.title}</h2>
-          </header>
-          <p>{post.content}</p>
-        </article>
-      ))}
-    </>
-  );
-};
 
 // 全体を見せる表示
 const App: React.FC = () => {
