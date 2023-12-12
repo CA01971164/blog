@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Head } from "./Components/Head";
 import { Foot } from "./Components/Foot";
 
+// josoデータで受け取る型の指定
 type Post = {
   id: number;
   title: string;
@@ -12,15 +13,32 @@ type Post = {
   time: Date;
 };
 
+//投稿した記事を表示させる仕組み
+const Article: React.FC<{ posts: Record<number, Post> }> = ({ posts }) => {
+  return (
+    <>
+      {Object.values(posts).map((post) => (
+        <article key={post.id} className="blog-post">
+          <header>
+            <h2>{post.title}</h2>
+          </header>
+          <p>{post.content}</p>
+        </article>
+      ))}
+    </>
+  );
+};
+
+// 全体を見せる表示
 const App: React.FC = () => {
   const [posts, setPosts] = useState<Post[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = axios.get("http://localhost:3001/posts");
-        console.log((await response).data);
-        const arr = (await response).data;
+        const response = await axios.get("http://localhost:3001/posts");
+        console.log(response.data);
+        const arr = response.data;
         setPosts(arr);
       } catch (error) {
         console.error("Error", error);
@@ -29,20 +47,14 @@ const App: React.FC = () => {
 
     fetchData();
   }, []);
+
   return (
     <>
       <Head />
       <main>
         <p>POST</p>
 
-        <article className="blog-post">
-          <header>
-            <h2>タイトル2</h2>
-            <time dateTime="2023-12-11">2023-12-11</time>
-          </header>
-          <p>本文2</p>
-        </article>
-
+        <Article posts={posts} />
         <nav>
           <ul>
             <li>
