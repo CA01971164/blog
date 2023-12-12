@@ -1,29 +1,40 @@
-import React from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
 
 import { useState } from "react";
 import { Head } from "./Components/Head";
 import { Foot } from "./Components/Foot";
 
-axios
-  .get("http://localhost:3001/posts")
-  .then((response) => console.log(response.data))
-  .catch((error) => console.error("Error", error));
+type Post = {
+  id: number;
+  title: string;
+  content: string;
+  time: Date;
+};
 
 const App: React.FC = () => {
+  const [posts, setPosts] = useState<Post[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = axios.get("http://localhost:3001/posts");
+        console.log((await response).data);
+        const arr = (await response).data;
+        setPosts(arr);
+      } catch (error) {
+        console.error("Error", error);
+      }
+    };
+
+    fetchData();
+  }, []);
   return (
     <>
       <Head />
       <main>
         <p>POST</p>
 
-        <article className="blog-post">
-          <header>
-            <h2>タイトル１</h2>
-            <time dateTime="2023-12-11">2023-12-11</time>
-          </header>
-          <p>本文１</p>
-        </article>
         <article className="blog-post">
           <header>
             <h2>タイトル2</h2>
