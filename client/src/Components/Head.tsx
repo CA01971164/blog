@@ -4,19 +4,20 @@ export const Head: React.FC = () => {
   return (
     <Box
       sx={{
+        display: "flex",
+        justifyContent: "center",
         typography: "body1",
         "& > :not(style) ~ :not(style)": {
-          ml: 2,
+          ml: 6,
           width: 200,
           height: 50,
-          borderBottomColor: "black",
-          borderBottomStyle: "solid",
-          borderBottomWidth: 2
         },
       }}
     >
-      <Link href="#">home</Link>
-      <Link href="#" >
+      <Link href="#" variant="body2">
+        home
+      </Link>
+      <Link href="#" variant="body2">
         言語
       </Link>
       <Link href="#" variant="body2">
