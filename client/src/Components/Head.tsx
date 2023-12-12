@@ -1,26 +1,33 @@
+import { Box, Link, Typography, Toolbar } from "@mui/material";
+
 export const Head: React.FC = () => {
   return (
-    <header>
-      <h1>Blog</h1>
-      <nav>
-        <ul>
-          <li>
-            <a href="">home</a>
-          </li>
-          <li>
-            <a href="">言語</a>
-          </li>
-          <li>
-            <a href="">カテゴリ</a>
-          </li>
-          <li>
-            <a href="">お問い合わせ</a>
-          </li>
-          <li>
-            <a href="">ログイン</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <Box
+      sx={{
+        typography: "body1",
+        "& > :not(style) ~ :not(style)": {
+          ml: 2,
+          width: 200,
+          height: 50,
+          borderBottomColor: "black",
+          borderBottomStyle: "solid",
+          borderBottomWidth: 2
+        },
+      }}
+    >
+      <Link href="#">home</Link>
+      <Link href="#" >
+        言語
+      </Link>
+      <Link href="#" variant="body2">
+        カテゴリ
+      </Link>
+      <Link href="#" variant="body2">
+        お問い合わせ
+      </Link>
+      <Link href="#" variant="body2">
+        ログイン
+      </Link>
+    </Box>
   );
 };
