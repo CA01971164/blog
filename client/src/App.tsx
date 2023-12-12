@@ -1,8 +1,14 @@
 import React from "react";
+import axios from "axios";
+
 import { useState } from "react";
 import { Head } from "./Components/Head";
 import { Foot } from "./Components/Foot";
 
+axios
+  .get("http://localhost:3001/posts")
+  .then((response) => console.log(response.data))
+  .catch((error) => console.error("Error", error));
 
 const App: React.FC = () => {
   return (
