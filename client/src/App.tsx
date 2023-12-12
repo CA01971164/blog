@@ -7,6 +7,7 @@ import usePostData from "./Hooks/usePostData";
 
 // 全体を見せる表示
 const App: React.FC = () => {
+  // カスタムフックの使用
   const { posts } = usePostData();
 
   return (
@@ -14,7 +15,6 @@ const App: React.FC = () => {
       <Head />
       <main>
         <p>POST</p>
-
         <Article posts={posts} />
       </main>
       <Foot />
