@@ -55,25 +55,6 @@ const App: React.FC = () => {
         <p>POST</p>
 
         <Article posts={posts} />
-        <nav>
-          <ul>
-            <li>
-              <a href="page1.html">1</a>
-            </li>
-            <li>
-              <a href="page2.html">2</a>
-            </li>
-            <li>
-              <a href="page3.html">3</a>
-            </li>
-            <li>
-              <a href="page4.html">4</a>
-            </li>
-            <li>
-              <a href="page12.html">12</a>
-            </li>
-          </ul>
-        </nav>
       </main>
       <Foot />
     </>
