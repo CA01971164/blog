@@ -1,10 +1,3 @@
-type Post = {
-  id: number;
-  title: string;
-  content: string;
-  time: Date;
-};
-
 //投稿した記事を表示させる仕組み
 export const Article: React.FC<{ posts: Record<number, Post> }> = ({
   posts,
