@@ -20,7 +20,7 @@ export const Article: React.FC<{ posts: Record<number, Post> }> = ({
             <Typography variant="body2">{post.content}</Typography>
 
             <CardActions>
-              <Button size="small">Learn More</Button>
+              <Button size="small">Read More</Button>
             </CardActions>
           </CardContent>
         </Card>
