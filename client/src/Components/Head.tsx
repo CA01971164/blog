@@ -1,4 +1,4 @@
-import { Box, Link, Stack, Typography, Toolbar } from "@mui/material";
+import { Box, Link, Stack, Typography, Toolbar, Button } from "@mui/material";
 import SvgIcon, { SvgIconProps } from "@mui/material/SvgIcon";
 
 const HomeIcon: React.FC<SvgIconProps> = (props) => {
@@ -11,11 +11,14 @@ const HomeIcon: React.FC<SvgIconProps> = (props) => {
 
 export const Head: React.FC = () => {
   return (
-    <Stack direction="row" spacing={30} alignItems="flex-end">
+    <Stack
+      direction="row"
+      spacing={3}
+      alignItems="flex-end"
+      justifyContent="space-between"
+    >
       <HomeIcon fontSize="large" color="action" />
-      <Link href="#" variant="body2">
-        ログイン
-      </Link>
+      <Button variant="contained">ログイン</Button>
     </Stack>
   );
 };
