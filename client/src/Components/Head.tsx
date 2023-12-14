@@ -11,19 +11,8 @@ const HomeIcon: React.FC<SvgIconProps> = (props) => {
 
 export const Head: React.FC = () => {
   return (
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        typography: "body1",
-        "& > :not(style) ~ :not(style)": {
-          ml: 6,
-          width: 200,
-          height: 50,
-        },
-      }}
-    >
-      <HomeIcon fontSize="large" color="action"/>
+    <Stack direction="row" spacing={30} alignItems="flex-end">
+      <HomeIcon fontSize="large" color="action" />
       <Link href="#" variant="body2">
         言語
       </Link>
@@ -36,6 +25,6 @@ export const Head: React.FC = () => {
       <Link href="#" variant="body2">
         ログイン
       </Link>
-    </Box>
+    </Stack>
   );
 };
