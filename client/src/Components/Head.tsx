@@ -13,13 +13,6 @@ export const Head: React.FC = () => {
   return (
     <Stack direction="row" spacing={30} alignItems="flex-end">
       <HomeIcon fontSize="large" color="action" />
-
-      <Link href="#" variant="body2">
-        カテゴリ
-      </Link>
-      <Link href="#" variant="body2">
-        お問い合わせ
-      </Link>
       <Link href="#" variant="body2">
         ログイン
       </Link>
