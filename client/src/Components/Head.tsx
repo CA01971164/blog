@@ -1,4 +1,13 @@
-import { Box, Link, Typography, Toolbar } from "@mui/material";
+import { Box, Link, Stack, Typography, Toolbar } from "@mui/material";
+import SvgIcon, { SvgIconProps } from "@mui/material/SvgIcon";
+
+const HomeIcon: React.FC<SvgIconProps> = (props) => {
+  return (
+    <SvgIcon {...props}>
+      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+    </SvgIcon>
+  );
+};
 
 export const Head: React.FC = () => {
   return (
@@ -14,9 +23,7 @@ export const Head: React.FC = () => {
         },
       }}
     >
-      <Link href="#" variant="body2">
-        home
-      </Link>
+      <HomeIcon />
       <Link href="#" variant="body2">
         言語
       </Link>
