@@ -9,7 +9,7 @@ const body_parser_1 = __importDefault(require("body-parser"));
 const blogRoutes_1 = __importDefault(require("./routes/blogRoutes"));
 const app = (0, express_1.default)();
 //mongoDBへの接続
-mongoose_1.default.connect("mongodb://localhost:27017/blog");
+mongoose_1.default.connect("mongodb://127.0.0.1:27017/blog");
 app.use(body_parser_1.default.json());
 // ルーティングを追加
 app.use(`/users`, blogRoutes_1.default);
