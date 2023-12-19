@@ -2,9 +2,9 @@ import express from "express";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import blogRouters from "./routes/blogRoutes";
+import path from "path";
 
 const app = express();
-const path = require(`path`);
 
 //mongoDBへの接続
 
