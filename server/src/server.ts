@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "../../client/build")));
 
 // ルーティングを追加
-app.use(`/users`, blogRouters);
+app.use(`/`, blogRouters);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
