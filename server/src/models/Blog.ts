@@ -7,7 +7,7 @@ interface IBlog extends Document {
 }
 
 const blogSchema = new Schema({
-  title: { type: String, Required: true },
+  title: { type: String, required: true },
   content: { type: String, required: true },
   // 他のフィールドを追加
 });
