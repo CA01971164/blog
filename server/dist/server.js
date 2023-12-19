@@ -15,5 +15,5 @@ app.use(body_parser_1.default.json());
 app.use(`/users`, blogRoutes_1.default);
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-    console.log(`Server is running on port {PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });
