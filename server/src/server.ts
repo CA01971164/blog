@@ -9,6 +9,7 @@ const path = require(`path`);
 const passport = require("passport");
 const LocalStrage = require("passport-local").Strategy;
 const session = require("express-session");
+const authRoutes = require("./routes/authRoutes");
 
 //mongoDBへの接続
 
@@ -21,6 +22,7 @@ app.use(express.static(path.join(__dirname, "../../client/build")));
 
 // ルーティングを追加
 app.use(`/`, blogRouters);
+app.use("/api", authRoutes);
 
 //Expressの設定
 app.use(
