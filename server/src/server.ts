@@ -9,8 +9,13 @@ import cors from "cors";
 const app = express();
 
 //mongoDBへの接続
+const mongoURI = "mongodb://127.0.0.1:27017/blog";
 
-mongoose.connect("mongodb://127.0.0.1:27017/blog");
+//mongoDBへの接続
+mongoose
+  .connect(mongoURI)
+  .then(() => console.log("MongoDBに接続しました"))
+  .catch((err) => console.error("MongoDBへの接続エラー: ", err));
 
 app.use(bodyParser.json());
 
