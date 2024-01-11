@@ -13,7 +13,9 @@ export const register = async (req: Request, res: Response) => {
       password: hashedPassword,
     });
 
+    // mongodbに保存する
     const savedUser = await user.save();
+    // createdを意味するコード
     res.status(201).json(savedUser);
   } catch (error) {
     res.status(500).json({ error: "ユーザー登録中にエラーが発生しました" });
