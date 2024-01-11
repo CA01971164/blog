@@ -11,24 +11,10 @@ import {
   TextField,
 } from "@mui/material";
 import { HomeIcon } from "./HomeIcon";
+import { useLogin } from "../Hooks/useLogin";
 
 export const Head: React.FC = () => {
-  const [open, setOpen] = useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const handleLogin = () => {
-    // ログインロジックをここに実装
-    console.log("ログイン処理");
-    setOpen(false);
-  };
-
+  const { open, handleClickOpen, handleClose, handleLogin } = useLogin();
   return (
     <Box>
       <Stack
