@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import blogRouters from "./routes/blogRoutes";
-import postsRoutes from "./routes/postsController";
+import postsRoutes from "./routes/postRoutes";
 import path from "path";
 import cors from "cors";
 
@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, "../../client/build")));
 
 // ルーティングを追加
 app.use(`/`, blogRouters);
-app.use(`/post`, postsRoutes);
+app.use(`/posts`, postsRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
