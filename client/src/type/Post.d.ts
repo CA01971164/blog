@@ -3,5 +3,4 @@ type Post = {
   id: number;
   title: string;
   content: string;
-  time: Date;
 };

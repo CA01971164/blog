@@ -11,7 +11,7 @@ export const getBlogs = async (req: Request, res: Response) => {
 };
 
 export const createBlog = async (req: Request, res: Response) => {
-  const [title, content] = req.body;
+  const { title, content } = req.body;
 
   try {
     const newBlog = new Blog({ title, content });
