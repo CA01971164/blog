@@ -10,13 +10,7 @@ import {
   Stack,
   TextField,
 } from "@mui/material";
-import SvgIcon, { SvgIconProps } from "@mui/material/SvgIcon";
-
-const HomeIcon: React.FC<SvgIconProps> = (props) => (
-  <SvgIcon {...props}>
-    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
-  </SvgIcon>
-);
+import { HomeIcon } from "./HomeIcon";
 
 export const Head: React.FC = () => {
   const [open, setOpen] = useState(false);
