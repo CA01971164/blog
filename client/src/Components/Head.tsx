@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import {
   Box,
   Button,
@@ -12,6 +11,7 @@ import {
 } from "@mui/material";
 import { HomeIcon } from "./HomeIcon";
 import { useLogin } from "../Hooks/useLogin";
+import { Create } from "./Create";
 
 export const Head: React.FC = () => {
   const {
@@ -24,6 +24,7 @@ export const Head: React.FC = () => {
     setUsername,
     setPassword,
   } = useLogin();
+
   return (
     <Box>
       <Stack
@@ -66,6 +67,7 @@ export const Head: React.FC = () => {
           />
         </DialogContent>
         <DialogActions>
+          <Create />
           <Button onClick={handleClose}>キャンセル</Button>
           <Button onClick={handleLogin}>ログイン</Button>
         </DialogActions>
