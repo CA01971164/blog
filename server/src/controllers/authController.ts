@@ -36,7 +36,7 @@ export const login = async (req: Request, res: Response) => {
     }
 
     // レスポンス（ここではシンプルに成功のみを返す）
-    res.json({ message: "ログイン成功" });
+    res.json({ message: "ログイン成功", user: { username: user.username } });
   } catch (error) {
     res.status(500).json({ error: "ログイン中にエラーが発生しました" });
   }

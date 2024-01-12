@@ -17,7 +17,7 @@ mongoose
   .then(() => console.log("MongoDBに接続しました"))
   .catch((err) => console.error("MongoDBへの接続エラー: ", err));
 
-app.use(bodyParser.json());
+app.use(express.json());
 
 // CORSをすべてのルートに対して有効化
 app.use(
