@@ -14,7 +14,16 @@ import { HomeIcon } from "./HomeIcon";
 import { useLogin } from "../Hooks/useLogin";
 
 export const Head: React.FC = () => {
-  const { open, handleClickOpen, handleClose, handleLogin } = useLogin();
+  const {
+    open,
+    handleClickOpen,
+    handleClose,
+    handleLogin,
+    username,
+    password,
+    setUsername,
+    setPassword,
+  } = useLogin();
   return (
     <Box>
       <Stack
@@ -42,6 +51,8 @@ export const Head: React.FC = () => {
             type="text"
             fullWidth
             variant="standard"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
           />
           <TextField
             margin="dense"
@@ -50,6 +61,8 @@ export const Head: React.FC = () => {
             type="password"
             fullWidth
             variant="standard"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </DialogContent>
         <DialogActions>
