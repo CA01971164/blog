@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname, "../../client/build")));
 
 // ルーティングを追加
 app.use(`/blogs`, blogRouters);
-app.use(`/api/auth`, authRoutes);
+app.use(`/api/users`, authRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
