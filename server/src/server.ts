@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import blogRouters from "./routes/blogRoutes";
-// import postsRoutes from "./routes/postRoutes";
+import authRoutes from "./routes/authRoutes";
 import path from "path";
 import cors from "cors";
 
@@ -17,7 +17,7 @@ mongoose
   .then(() => console.log("MongoDBに接続しました"))
   .catch((err) => console.error("MongoDBへの接続エラー: ", err));
 
-app.use(bodyParser.json());
+app.use(express.json());
 
 // CORSをすべてのルートに対して有効化
 app.use(
@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname, "../../client/build")));
 
 // ルーティングを追加
 app.use(`/blogs`, blogRouters);
-// app.use(`/posts`, postsRoutes);
+app.use(`/api/users`, authRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
