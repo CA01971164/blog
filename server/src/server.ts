@@ -1,6 +1,5 @@
 import express from "express";
 import mongoose from "mongoose";
-import bodyParser from "body-parser";
 import blogRouters from "./routes/blogRoutes";
 import authRoutes from "./routes/authRoutes";
 import path from "path";
