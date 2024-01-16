@@ -4,16 +4,16 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 //投稿した記事を表示させる仕組み
 export const Article: React.FC<{ posts: Record<number, Post> }> = ({
   posts,
 }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const navigate = useNavigate();
 
-  const handleReadMore = () => {
-    setIsExpanded(true);
+  const handleReadMore = (id: number) => {
+    navigate(`/posts/${id}`);
   };
   return (
     <>
@@ -23,12 +23,9 @@ export const Article: React.FC<{ posts: Record<number, Post> }> = ({
             <Typography variant="h5" component="div">
               {post.title}
             </Typography>
-            <Typography variant="body2">
-              {isExpanded ? post.fullText : post.summary}
-            </Typography>
-
+            <Typography variant="body2">{post.summary}</Typography>
             <CardActions>
-              <Button size="small" onClick={handleReadMore}>
+              <Button size="small" onClick={() => handleReadMore(post.id)}>
                 Read More
               </Button>
             </CardActions>
