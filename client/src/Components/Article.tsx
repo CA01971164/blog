@@ -13,7 +13,7 @@ export const Article: React.FC<{ posts: Record<number, Post> }> = ({
   const [isExpanded, setIsExpanded] = useState(false);
 
   const handleReadMore = () => {
-    setIsExpanded(true);
+    
   };
   return (
     <>
@@ -24,7 +24,7 @@ export const Article: React.FC<{ posts: Record<number, Post> }> = ({
               {post.title}
             </Typography>
             <Typography variant="body2">
-              {isExpanded ? post.fullText : post.summary}
+              { post.summary}
             </Typography>
 
             <CardActions>
