@@ -13,8 +13,8 @@ export const Article: React.FC<{ posts: Record<number, Post> }> = ({
 }) => {
   const navigate = useNavigate();
 
-  const handleReadMore = () => {
-    navigate("/posts/${id}");
+  const handleReadMore = (id: number) => {
+    navigate(`/posts/${id}`);
   };
   return (
     <>
@@ -27,7 +27,7 @@ export const Article: React.FC<{ posts: Record<number, Post> }> = ({
             <Typography variant="body2">{post.summary}</Typography>
 
             <CardActions>
-              <Button size="small" onClick={handleReadMore}>
+              <Button size="small" onClick={() => handleReadMore(post.id)}>
                 Read More
               </Button>
             </CardActions>
