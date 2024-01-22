@@ -11,13 +11,28 @@ export const getBlogs = async (req: Request, res: Response) => {
 };
 
 export const createBlog = async (req: Request, res: Response) => {
-  const { title, content } = req.body;
+  const { title, summary, fullText } = req.body;
 
   try {
-    const newBlog = new Blog({ title, content });
+    const newBlog = new Blog({ title, summary, fullText });
     const savedBlog = await newBlog.save();
     res.json(savedBlog);
   } catch (error) {
     res.status(500).json({ error: `Internal Server Error` });
+  }
+};
+
+export const getBlogPost = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const blogPost = await Blog.findById(id);
+
+    if (!blogPost) {
+      return res.status(404).json({ message: "Blog post not found" });
+    }
+
+    res.json(blogPost);
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching blog post", error });
   }
 };
