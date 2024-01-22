@@ -17,7 +17,7 @@ const App: React.FC = () => {
       <main>
         <Routes>
           <Route path="/" element={<Article posts={posts} />} />
-          <Route path="/blogs/:id" element={<BlogPost />} />
+          <Route path="/posts/:id" element={<BlogPost />} />
         </Routes>
       </main>
       <Foot />
