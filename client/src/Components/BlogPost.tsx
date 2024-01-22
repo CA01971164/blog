@@ -10,7 +10,7 @@ interface BlogPost {
 
 const BlogPost = () => {
   const [post, setPost] = useState<BlogPost | null>(null);
-  const { id } = useParams();
+  const { id } = useParams<{ id: string }>();
 
   useEffect(() => {
     const fetchPost = async () => {

@@ -6,20 +6,19 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import BlogPost from "./BlogPost";
 
 //投稿した記事を表示させる仕組み
-export const Article: React.FC<{ posts: Record<number, Post> }> = ({
-  posts,
-}) => {
+export const Article: React.FC<{ posts: Post[] }> = ({ posts }) => {
   const navigate = useNavigate();
 
   const handleReadMore = (id: number) => {
-    navigate(`/posts/${id}`);
+    navigate(`/blogs/${id}`);
   };
   return (
     <>
       {Object.values(posts).map((post) => (
-        <Card sx={{ minWidth: 275, m: 2 }} key={post.id} className="blog-post">
+        <Card sx={{ minWidth: 275, m: 2 }} key={post._id} className="blog-post">
           <CardContent>
             <Typography variant="h5" component="div">
               {post.title}
@@ -27,7 +26,7 @@ export const Article: React.FC<{ posts: Record<number, Post> }> = ({
             <Typography variant="body2">{post.summary}</Typography>
 
             <CardActions>
-              <Button size="small" onClick={() => handleReadMore(post.id)}>
+              <Button size="small" onClick={() => handleReadMore(post._id)}>
                 Read More
               </Button>
             </CardActions>
