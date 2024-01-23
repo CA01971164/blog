@@ -1,5 +1,7 @@
 import { Request, Response } from "express";
 import Blog from "../models/Blog";
+import { readMarkdownFile } from "../utils/readMarkdownFile";
+import path from "path";
 
 export const getBlogs = async (req: Request, res: Response) => {
   try {
@@ -31,7 +33,20 @@ export const getBlogPost = async (req: Request, res: Response) => {
       return res.status(404).json({ message: "Blog post not found" });
     }
 
-    res.json(blogPost);
+    const markdownFilePath = path.join(
+      __dirname,
+      "..",
+      "..",
+      "ReactBlogs",
+      blogPost.fullText
+    );
+
+    const markdownContent = await readMarkdownFile(markdownFilePath);
+    res.json({
+      title: blogPost.title,
+      summary: blogPost.summary,
+      fullText: markdownContent,
+    });
   } catch (error) {
     res.status(500).json({ message: "Error fetching blog post", error });
   }
