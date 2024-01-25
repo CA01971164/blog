@@ -34,10 +34,11 @@ export const Head: React.FC = () => {
         justifyContent="space-between"
       >
         <HomeIcon fontSize="large" color="action" />
-        <Button variant="contained" onClick={handleClickOpen}>
+      </Stack>
+      {/* <Button variant="contained" onClick={handleClickOpen}>
           ログイン
         </Button>
-      </Stack>
+      // </Stack>を配置する
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>ログイン</DialogTitle>
         <DialogContent>
@@ -71,7 +72,7 @@ export const Head: React.FC = () => {
           <Button onClick={handleClose}>キャンセル</Button>
           <Button onClick={handleLogin}>ログイン</Button>
         </DialogActions>
-      </Dialog>
+      </Dialog> */}
     </Box>
   );
 };
