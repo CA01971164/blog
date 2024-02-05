@@ -1,7 +1,7 @@
 // josoデータで受け取る型の指定
 type Post = {
   [x: string]: ReactNode;
-  id: number;
+  _id: string;
   title: string;
-  content: string;
+  summary: string;
 };
