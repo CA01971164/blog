@@ -12,7 +12,7 @@ import BlogPost from "./BlogPost";
 export const Article: React.FC<{ posts: Post[] }> = ({ posts }) => {
   const navigate = useNavigate();
 
-  const handleReadMore = (id: number) => {
+  const handleReadMore = (id: string) => {
     navigate(`/blogs/${id}`);
   };
   return (
