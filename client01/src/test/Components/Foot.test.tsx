@@ -1,6 +1,5 @@
-import React from "react";
 import { render } from "@testing-library/react";
-import { Foot } from "../../Components/Foot"; // Foot コンポーネントのパスを適宜修正してください
+import { Foot } from "../../Components/Foot";
 import "@testing-library/jest-dom";
 
 describe("Foot Component", () => {

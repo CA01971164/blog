@@ -1,4 +1,3 @@
-import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import { Article } from "../../Components/Article";
 import { BrowserRouter } from "react-router-dom";

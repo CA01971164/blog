@@ -1,7 +1,6 @@
-import React from "react";
 import { render, waitFor } from "@testing-library/react";
 import axios from "axios";
-import BlogPost from "../../Components/BlogPost"; // 適切なパスに変更してください
+import BlogPost from "../../Components/BlogPost"; 
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import "@testing-library/jest-dom";
 

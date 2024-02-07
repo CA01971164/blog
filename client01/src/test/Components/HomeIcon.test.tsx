@@ -1,4 +1,3 @@
-import React from "react";
 import { render, fireEvent, getByTestId } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import { HomeIcon } from "../../Components/HomeIcon";

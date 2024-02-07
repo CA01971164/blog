@@ -1,8 +1,7 @@
-import React from "react";
 import { render, fireEvent, waitFor, screen } from "@testing-library/react";
 import axios from "axios";
 import "@testing-library/jest-dom";
-import { Create } from "../../Components/Create"; // 適切なパスに変更してください
+import { Create } from "../../Components/Create";
 import { act } from "react-dom/test-utils";
 
 // axios のモック
