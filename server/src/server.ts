@@ -26,7 +26,7 @@ app.use(
 );
 
 //静的ファイルの提供
-app.use(express.static(path.join(__dirname, "../../client/build")));
+app.use(express.static(path.join(__dirname, "../../client01/build")));
 
 // ルーティングを追加
 app.use(`/blogs`, blogRouters);
