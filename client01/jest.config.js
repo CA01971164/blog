@@ -6,7 +6,7 @@ module.exports = {
   moduleNameMapper: {
     // 必要に応じてエイリアスを設定
   },
-  setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
+  setupFilesAfterEnv: ["@testing-library/jest-dom/"],
 
   // その他のJest設定...
 };
