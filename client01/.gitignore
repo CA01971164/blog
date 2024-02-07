@@ -25,11 +25,11 @@ yarn-error.log*
 /public
 
 # added files
-/README.md
+
 /yarn.lock
-/tsconfig.json
-/package.json
-/config-overrides.js
-/jest.config.js
+
+
+
+
 /package-lock.json
 
