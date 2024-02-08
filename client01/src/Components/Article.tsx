@@ -4,15 +4,13 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import BlogPost from "./BlogPost";
 
 //投稿した記事を表示させる仕組み
 export const Article: React.FC<{ posts: Post[] }> = ({ posts }) => {
   const navigate = useNavigate();
 
-  const handleReadMore = (id: number) => {
+  const handleReadMore = (id: string) => {
     navigate(`/blogs/${id}`);
   };
   return (

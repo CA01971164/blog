@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Article } from "./Components/Article";
 import { Head } from "./Components/Head";
 import { Foot } from "./Components/Foot";
-import BlogPost from "./Components/BlogPost"; //ブログポストの詳細を表示するコンポーネント
+import BlogPost from "./Components/BlogPost"; 
 import usePostData from "./Hooks/usePostData";
 
 // 全体を見せる表示
