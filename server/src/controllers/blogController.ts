@@ -12,17 +12,17 @@ export const getBlogs = async (req: Request, res: Response) => {
   }
 };
 
-export const createBlog = async (req: Request, res: Response) => {
-  const { title, summary, fullText } = req.body;
+// export const createBlog = async (req: Request, res: Response) => {
+//   const { title, summary, fullText } = req.body;
 
-  try {
-    const newBlog = new Blog({ title, summary, fullText });
-    const savedBlog = await newBlog.save();
-    res.json(savedBlog);
-  } catch (error) {
-    res.status(500).json({ error: `Internal Server Error` });
-  }
-};
+//   try {
+//     const newBlog = new Blog({ title, summary, fullText });
+//     const savedBlog = await newBlog.save();
+//     res.json(savedBlog);
+//   } catch (error) {
+//     res.status(500).json({ error: `Internal Server Error` });
+//   }
+// };
 
 export const getBlogPost = async (req: Request, res: Response) => {
   try {

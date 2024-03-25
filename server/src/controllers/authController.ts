@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
 import User from "../models/User";
-import bcrypt from "bcrypt";
+import bcryptjs from "bcryptjs";
 
 export const register = async (req: Request, res: Response) => {
   try {
     // パスワードのハッシュ化
-    const hashedPassword = await bcrypt.hash(req.body.password, 10);
+    const hashedPassword = await bcryptjs.hash(req.body.password, 10);
 
     // ユーザーの作成
     const user = new User({
@@ -30,7 +30,7 @@ export const login = async (req: Request, res: Response) => {
     }
 
     // パスワードの検証
-    const valid = await bcrypt.compare(req.body.password, user.password);
+    const valid = await bcryptjs.compare(req.body.password, user.password);
     if (!valid) {
       return res.status(400).json({ error: "パスワードが間違っています" });
     }

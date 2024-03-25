@@ -3,3 +3,5 @@
 /node_modules
 /readme.md
 /LICENSE
+/docker-compose
+/.env
