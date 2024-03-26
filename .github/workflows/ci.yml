@@ -6,14 +6,31 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up Node.js
+      - uses: actions/checkout@v2
+
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: "20"
-      - name: Install dependencies
-        run: npm install
-      - name: Run tests
-        run: npm test
-      - name: Build
-        run: npm run build
+
+      - name: Install dependencies and Run tests in client01
+        run: |
+          cd client01
+          npm install
+          npm test
+
+      - name: Install dependencies and Run tests in server
+        run: |
+          cd server
+          npm install
+          npm test
+
+      - name: Build client01
+        run: |
+          cd client01
+          npm run build
+
+      - name: Build server
+        run: |
+          cd server
+          npm run build
