@@ -4,13 +4,15 @@ import axios from "axios";
 import { Typography, Box } from "@mui/material";
 import { Remarkable } from "remarkable";
 
-interface BlogPost {
+// コンポーネントとそのpropsの型を区別するために、型やインターフェース名の前にIを付ける（または他の区別可能なプレフィックスやサフィックスを使用する）ことは、TypeScriptを使用したReactプロジェクトにおいて一般的な慣習の一つです。
+
+interface IBlogPost {
   title: string;
   fullText: string;
 }
 
 const BlogPost = () => {
-  const [post, setPost] = useState<BlogPost | null>(null);
+  const [post, setPost] = useState<IBlogPost | null>(null);
   const { id } = useParams<{ id: string }>();
 
   useEffect(() => {
