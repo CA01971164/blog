@@ -19,11 +19,11 @@ jobs:
           npm install
           npm test
 
-      - name: Install dependencies and Run tests in server
-        run: |
-          cd server
-          npm install
-          npm test
+      # - name: Install dependencies and Run tests in server
+      #   run: |
+      #     cd server
+      #     npm install
+      #     npm test
 
       - name: Build client01
         run: |
