@@ -82,7 +82,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/bcrypt": "^5.0.2",
     "@types/bcryptjs": "^2.4.6",
     "@types/body-parser": "^1.19.5",
     "@types/cors": "^2.8.17",
