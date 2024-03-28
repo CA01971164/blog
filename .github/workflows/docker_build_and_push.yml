@@ -10,12 +10,12 @@ jobs:
 
       - name: Build and Push Client Docker Image
         run: |
-          docker build -t myapp/client:${{ github.sha }} ./client01
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/client:${{ github.sha }} ./client01
           echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-          docker push myapp/client:${{ github.sha }}
+          docker push ${{ secrets.DOCKER_USERNAME }}/client:${{ github.sha }}
 
       - name: Build and Push Server Docker Image
         run: |
-          docker build -t myapp/server:${{ github.sha }} ./server
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/server:${{ github.sha }} ./server
           echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-          docker push myapp/server:${{ github.sha }}
+          docker push ${{ secrets.DOCKER_USERNAME }}/server:${{ github.sha }}
